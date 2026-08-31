@@ -1,5 +1,5 @@
 # Athena's X Reader System
-Athena's X Reader System allows fan fiction authors to create "x reader" fics that use reader chosen pronouns, and names.
+Athena's X Reader System (AXRS) allows fan fiction authors to create "x reader" fics that use reader chosen pronouns, and names.
 
 When writing your fan fic use the following codes to be compatible with the system
 
