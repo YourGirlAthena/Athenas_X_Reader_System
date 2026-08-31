@@ -8,7 +8,7 @@ When writing your fan fic use the following codes to be compatible with the syst
 | y/n | first name | No (always uppercase) |
 | y1p | he/she/they/custom | Yes ( Y1P or Y1p will be uppercase) |
 | y2p | him/her/them/custom | Yes ( Y2P or Y2p will be uppercase) |
-| y2p | his/hers/theirs/custom | Yes ( Y3P or Y3p will be uppercase) |
+| y3p | his/hers/theirs/custom | Yes ( Y3P or Y3p will be uppercase) |
 | yfn | formal/full name | No (always uppercase) |
 | yhn | honorific name | No (always uppercase) |
 
