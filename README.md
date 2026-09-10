@@ -3,14 +3,14 @@ Athena's X Reader System (AXRS) allows fan fiction authors to create "x reader" 
 
 When writing your fan fic use the following codes to be compatible with the system
 
-| Code | Replacement Word | Case Sensitive Support |
-|-------|--------|--------|
-| y/n | first name | No (always uppercase) |
-| y1p | he/she/they/custom | Yes ( Y1P or Y1p will be uppercase) |
-| y2p | him/her/them/custom | Yes ( Y2P or Y2p will be uppercase) |
-| y3p | his/hers/theirs/custom | Yes ( Y3P or Y3p will be uppercase) |
-| yfn | formal/full name | No (always uppercase) |
-| yhn | honorific name | No (always uppercase) |
+| Code | Replacement Word | Togglable Uppercase Support | All Caps Support |
+|-------|--------|--------|--------|
+| y/n | first name | No (always uppercase) | Yes ( Y/N will be all caps) |
+| y1p | he/she/they/custom | Yes ( Y1p will be uppercase) | Yes ( Y1P will be all caps) |
+| y2p | him/her/them/custom | Yes ( Y2p will be uppercase) | Yes ( Y2P will be all caps) |
+| y3p | his/hers/theirs/custom | Yes ( Y3p will be uppercase) | Yes ( Y3P will be all caps) |
+| yfn | formal/full name | No (always uppercase) | Yes ( YFN will be all caps) |
+| yhn | honorific name | No (always uppercase) | Yes ( YHN will be all caps) |
 
 For example Jane is reading a fan fic that uses this system her pronouns are she/her/hers her full name is Jane Watts Smith and her honorific name is Dr. Smith. This is what a fan fic author would right:
 
