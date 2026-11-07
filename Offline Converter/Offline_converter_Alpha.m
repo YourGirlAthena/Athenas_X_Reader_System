@@ -1,0 +1,154 @@
+clc
+clear
+close all
+
+%var = "y/n Y/n Y/N y1p Y1p Y1P y2p Y2p Y2P y3p Y3p Y3P y4p Y4p Y4P yfn Yfn YFN yhn Yhn YHN"
+
+prompt = {'What is your first name?','What is your first pronoun? (ex. she/he/they)','What is your second pronoun? (ex. her/him/them)','What is your third pronoun? (ex. her/his/their)','What is your fourth pronoun? (ex. hers/his/theirs)','What is your full name?', 'What is your honorific name? (ex. Dr. Smith/Ms. Rogers)'};
+dlgtitle = 'Input';
+answer = inputdlg(prompt,dlgtitle);
+
+%name replace variables
+oldn1 = "y/n";
+oldn2 = "Y/n";
+oldn3 = "Y/N";
+
+
+name = lower(answer{1,1});
+name(1) = upper(name(1));
+name1 = name;
+name2 = upper(name);
+
+%pronoun 1 replace variables
+oldp1l = "y1p";
+oldp1U = "Y1p";
+oldp1C = "Y1P";
+
+pn1 = lower(answer{2,1});
+pn1l = lower(pn1);
+pn1(1) = upper(pn1(1));
+pn1U = pn1;
+pn1C = upper(answer{2,1});
+
+%pronoun 2 replace variables
+oldp2l = "y2p";
+oldp2U = "Y2p";
+oldp2C = "Y2P";
+
+pn2 = lower(answer{3,1});
+pn2l = lower(pn2);
+pn2(1) = upper(pn2(1));
+pn2U = pn2;
+pn2C = upper(answer{3,1});
+
+%pronoun 3 replace variables
+oldp3l = "y3p";
+oldp3U = "Y3p";
+oldp3C = "Y3P";
+
+pn3 = lower(answer{4,1});
+pn3l = lower(pn3);
+pn3(1) = upper(pn3(1));
+pn3U = pn3;
+pn3C = upper(answer{4,1});
+
+%pronoun 4 replace variables
+oldp4l = "y4p";
+oldp4U = "Y4p";
+oldp4C = "Y4P";
+
+pn4 = lower(answer{5,1});
+pn4l = lower(pn4);
+pn4(1) = upper(pn4(1));
+pn4U = pn4;
+pn4C = upper(answer{5,1});
+
+%Full name replace variables
+oldf1l = "yfn";
+oldf1U = "Yfn";
+oldf1C = "YFN";
+
+%adds title case to answer
+fn1 = lower(answer{6,1});
+char_num=numel(fn1);
+fn1(1) = upper(fn1(1));
+lastchartype = 0;
+for j = 2:char_num
+    if isstrprop(fn1(j),"alphanum")==1 && lastchartype == 1
+        fn1(j)=upper(fn1(j));
+        lastchartype = 0;
+    elseif isstrprop(fn1(j),"alphanum")==0
+        lastchartype = 1;
+    end
+end
+fn1U = fn1;
+fn1C = upper(fn1);
+
+%Honorific name replace variables
+oldh1l = "yhn";
+oldh1U = "Yhn";
+oldh1C = "YHN";
+
+%adds title case to answer
+hn1 = lower(answer{7,1});
+char_num=numel(hn1);
+hn1(1) = upper(hn1(1));
+lastchartype = 0;
+for j = 2:char_num
+    if isstrprop(hn1(j),"alphanum")==1 && lastchartype == 1
+        hn1(j)=upper(hn1(j));
+        lastchartype = 0;
+    elseif isstrprop(hn1(j),"alphanum")==0
+        lastchartype = 1;
+    end
+end
+hn1U = hn1;
+hn1C = upper(hn1);
+
+%import text file
+lines = readlines("test_text.txt");
+
+for i = 1:numel(lines)
+    var = lines(i,1);
+    
+    %replace first name
+    newvar = replace(var,oldn1,name1);
+    newvar = replace(newvar,oldn2,name1);
+    newvar = replace(newvar,oldn3,name2);
+   
+    %replace pronoun 1
+    newvar = replace(newvar,oldp1l,pn1l);
+    newvar = replace(newvar,oldp1U,pn1U);
+    newvar = replace(newvar,oldp1C,pn1C);
+    
+    %replace pronoun 1
+    newvar = replace(newvar,oldp2l,pn2l);
+    newvar = replace(newvar,oldp2U,pn2U);
+    newvar = replace(newvar,oldp2C,pn2C);
+    
+    %replace pronoun 1
+    newvar = replace(newvar,oldp3l,pn3l);
+    newvar = replace(newvar,oldp3U,pn3U);
+    newvar = replace(newvar,oldp3C,pn3C);
+    
+    %replace pronoun 1
+    newvar = replace(newvar,oldp4l,pn4l);
+    newvar = replace(newvar,oldp4U,pn4U);
+    newvar = replace(newvar,oldp4C,pn4C);
+    
+    %replace pronoun 1
+    newvar = replace(newvar,oldf1l,fn1U);
+    newvar = replace(newvar,oldf1U,fn1U);
+    newvar = replace(newvar,oldf1C,fn1C);
+    
+    %replace pronoun 1
+    newvar = replace(newvar,oldh1l,hn1U);
+    newvar = replace(newvar,oldh1U,hn1U);
+    newvar = replace(newvar,oldh1C,hn1C);
+    
+    %put replaced text back into text array
+    lines(i,1) = newvar;
+end
+
+%export text file
+writelines(lines,"new_test_text.txt")
